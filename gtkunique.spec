@@ -3,15 +3,19 @@ Summary(pl.UTF-8):	Biblioteka zapewniająca uruchamianie tylko jednej instancji 
 Name:		gtkunique
 Version:	0.9.1
 Release:	1
-License:	GPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	ba00da4858cadb132948840a235454d8
 URL:		http://svn.gnome.org/viewcvs/gtkunique/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
+BuildRequires:	dbus-glib-devel >= 0.70
+BuildRequires:	glib2-devel >= 1:2.12.0
+BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,6 +29,9 @@ Summary:	Header files for gtkunique library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki gtkunique
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	dbus-glib-devel >= 0.70
+Requires:	glib2-devel >= 1:2.12.0
+Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
 Header files for gtkunique library.
