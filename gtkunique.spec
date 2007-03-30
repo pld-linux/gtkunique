@@ -1,10 +1,10 @@
-#
 Summary:	Library to make sure only one instance of a program is running
+Summary(pl.UTF-8):	Biblioteka zapewniająca uruchamianie tylko jednej instancji programu
 Name:		gtkunique
 Version:	0.9.1
 Release:	1
 License:	GPL
-Group:		Applications
+Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	ba00da4858cadb132948840a235454d8
 URL:		http://svn.gnome.org/viewcvs/gtkunique/
@@ -16,6 +16,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Library to make sure only one instance of a program is running.
+
+%description -l pl.UTF-8
+Biblioteka zapewniająca uruchamianie tylko jednej instancji programu.
 
 %package devel
 Summary:	Header files for gtkunique library
@@ -70,14 +73,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
-%{_pkgconfigdir}/*.pc
 %{_includedir}/*
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
